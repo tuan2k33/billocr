@@ -11,7 +11,7 @@ client = OpenAI(
     api_key=os.environ["OPENROUTER_API_KEY"],
 )
 
-model = sys.argv[1] if len(sys.argv) > 1 else "openrouter/auto"
+model = sys.argv[1] if len(sys.argv) > 1 else "google/gemma-4-31b-it:free"
 prompt = sys.argv[2] if len(sys.argv) > 2 else "Xin chào, trả lời ngắn gọn."
 
 resp = client.chat.completions.create(
