@@ -21,7 +21,7 @@ client = OpenAI(
 
 FIELDS = ["company", "date", "address", "total"]
 PROMPT = """Đọc hóa đơn trong ảnh và trả về DUY NHẤT một JSON, không giải thích, không markdown, đúng 4 khóa sau:
-- "company": tên công ty/cửa hàng in hoa như trên hóa đơn, không kèm địa chỉ.
+- "company": tên công ty/cửa hàng ở dòng đầu hóa đơn, in hoa như trên hóa đơn, không kèm địa chỉ và không kèm mã đăng ký trong ngoặc (ví dụ bỏ "(S19537-X)"). Nếu có hai dòng tên thì lấy dòng đầu.
 - "date": chỉ ngày, không có giờ, giữ định dạng in trên hóa đơn (ví dụ "25/12/2018").
 - "address": địa chỉ đầy đủ trên một dòng, nối các dòng bằng dấu phẩy.
 - "total": tổng tiền cuối cùng khách phải trả (sau thuế, sau làm tròn), chỉ chữ số và dấu chấm, không đơn vị tiền tệ, ví dụ "9.00".
